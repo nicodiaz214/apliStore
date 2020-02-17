@@ -1,0 +1,488 @@
+/*FUENTES*/
+/*font-family: 'Montserrat', sans-serif;*/
+/*font-family: 'Playfair Display', serif;*/
+/*font-family: 'Roboto Mono', monospace;*/
+
+/*BACK TO TOP*/
+#myBtn {
+    display: none; 
+    position: fixed; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: white; 
+    color: #2e2d2b; 
+    cursor: pointer; 
+    font-size: 50px;
+    transition: all .5s ease;
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  #myBtn:hover {
+    background-color: #2e2d2b; 
+    color: white; 
+  }
+
+  
+/*MAIN*/
+body{
+box-sizing: border-box;
+font-family: 'Roboto Mono', monospace;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.main{
+    height: 100vh;
+    background-image: white;
+}
+
+
+/* HEADER */
+
+#barra-inicio{
+    background-color: #555555;
+}
+
+#barra-inicio a{
+    color: #ffffff;
+}
+
+.navbar-toggle{
+    color: #ffffff;
+}
+
+.navbar-toggler-icon{
+    color: #ffffff;
+}
+
+.navbar-toggler {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+#nav-links{
+    border-bottom: 2px solid transparent;
+    transition: ease-in-out .5s;
+}
+
+#nav-links:hover{
+    border-bottom: 2px solid #ffffff;
+    transition: ease-in-out .5s;
+}
+
+/* MAIN */
+
+/* PRODUCTS */
+
+.products-off{
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.products-off .products-off-tittle h2{
+    font-size: 40px;
+    font-weight: bold;
+    padding: 2%;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.products-list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 2%; 
+}
+
+.product-card{
+    width: 30%;
+    border: 1px solid rgb(224, 224, 224);
+    box-shadow: dimgrey 5px 5px 5px;
+    border-radius: 5%;
+    text-align: center;
+    margin-top: 0;
+    margin: 3%;
+}
+
+.product-card img{
+    width: 50%;
+    padding: 5%;
+    align-items: center;
+    filter: grayscale(80%);
+}
+
+.product-card img:hover{
+    filter: grayscale(0%);
+}
+
+.product-tittle{
+   font-size: 20px;
+   font-weight: bold;
+   padding: 1%;
+   margin-left: 5%;
+}
+
+.product-description{
+    padding: 1%;
+    margin-left: 5%;
+    margin: 0;
+ }
+ 
+ .btn-buy{
+     width: 50%;
+     height: 10%;
+     margin-bottom: 8%;
+     background-color: #2e2b2d;
+     border: none;
+     text-decoration: none;
+ }
+
+ .btn-buy a{
+    color: white;
+    text-decoration: none;
+}
+ 
+.btn-buy:hover{
+    background-color: goldenrod; 
+    transition: 0.5s ease;
+}
+
+.btn-buy a:hover{
+    color: black;
+    transition: 0.5s ease;
+}
+
+.products-more{
+    width: 100%;
+    text-align: center;
+}
+
+.products-more a{
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s ease-out;
+    text-transform: uppercase;
+}
+
+.products-more a:hover{
+    border-bottom: 1px solid goldenrod;
+}
+
+/* FOOTER */
+
+footer{
+    background: #a90329;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    position: absolute;
+    z-index: 1;
+}
+.contact{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1%;
+}
+
+.contact span{
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    font-size: 90px; 
+    font-weight: bold;
+    width: 100%;
+}
+
+.form-contact {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    color:white;
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    height: 70px;
+    outline: transparent;
+    margin-bottom: 4%;
+}
+
+.form-contact::placeholder{
+    color:white;
+}
+
+.form-contact:focus::placeholder {
+    color: transparent;
+  }
+
+.form-contact:hover{
+    border-bottom: 2px solid white;
+}
+
+.textarea{
+    height: 110px;
+}
+
+.checkbox-term{
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 4%;
+}
+
+.btn-contact{
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    background-color: transparent;
+    width: 30%;
+    border-radius: 50px;
+    border: 3px solid white;
+    border-color: white;
+    height: 70px;
+    margin: 0 auto;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.4s ease-in-out;
+    margin-bottom: 1%;
+}
+
+.btn-contact:hover{
+    color: #a90329;
+    background-color: white;
+}
+
+.contact-bottom{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#phone, #email{
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 1%;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.social-media-btn{
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 2%;
+    margin-top: 1%;
+}
+
+.social-media-btn a{
+    color: white;
+    font-size: 30px;
+    padding: 1%;
+}
+
+.contact p {
+    font-family: 'Roboto Mono', monospace;
+}
+
+/*media query celulares muy chicos*/
+@media screen and (min-width:250px) and (max-width: 350px){
+
+    footer{
+        height: auto;
+    }
+
+    .contact{
+        width: 90%;
+        padding: 2%;
+    }
+    
+    .contact span{
+        font-size: 40px; 
+    }
+
+    .form-contact {
+        font-size: 15px;      
+        width: 100%;
+        height: 50px;      
+        margin-bottom: 2%;
+    }
+
+    .textarea{
+        height: 100px;
+    }
+    
+    .checkbox-term{
+        font-size: 12px;
+    }
+    
+    .btn-contact{
+        width: 50%;
+        height: 50px;
+        font-size: 20px;  
+    }
+    
+    #phone, #email{
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    .social-media-btn a{
+        font-size: 18px;
+    }
+
+    .contact p {
+       font-size: 12px;
+       margin-bottom: 1%;
+       font-family: 'Montserrat', sans-serif;
+       }
+
+       .products-list{
+        flex-direction: column;
+    }
+    
+
+       .product-card{
+        width: 90%;
+    }
+       
+}
+
+/*media query celulares muy medianos*/
+@media screen and (min-width:351px) and (max-width: 750px){
+
+    footer{
+        height: 100vh;
+    }
+
+    .contact{
+        width: 90%;
+        padding: 2%;
+    }
+    
+    .contact span{
+        font-size: 40px; 
+    }
+
+    .form-contact {
+        font-size: 17px;      
+        width: 100%;
+        height: 50px;      
+        margin-bottom: 2%;
+    }
+
+    .textarea{
+        height: 100px;
+    }
+    
+    .checkbox-term{
+        font-size: 12px;
+    }
+    
+    .btn-contact{
+        width: 50%;
+        height: 50px;
+        font-size: 20px;  
+    }
+    
+    #phone, #email{
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    .social-media-btn a{
+        font-size: 18px;
+    }
+
+    .contact p {
+       font-size: 12px;
+       margin-bottom: 1%;
+       font-family: 'Montserrat', sans-serif;
+       }
+
+       .products-list{
+        flex-direction: column;
+    }
+       .product-card{
+        width: 90%;
+    }
+       
+}
+
+/*media query celulares muy medianos*/
+@media screen and (min-width:751px) and (max-width: 1050px){
+
+    footer{
+        height: 100vh;
+    }
+
+    .contact{
+        width: 90%;
+        padding: 2%;
+    }
+    
+    .contact span{
+        font-size: 60px; 
+    }
+
+    .form-contact {
+        font-size: 19px;      
+        width: 100%;
+        height: 50px;      
+        margin-bottom: 2%;
+    }
+
+    .textarea{
+        height: 100px;
+    }
+    
+    .checkbox-term{
+        font-size: 14px;
+    }
+    
+    .btn-contact{
+        width: 50%;
+        height: 50px;
+        font-size: 25px;  
+    }
+    
+    #phone, #email{
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    .social-media-btn a{
+        font-size: 20px;
+    }
+
+    .contact p {
+       font-size: 14px;
+       margin-bottom: 1%;
+       font-family: 'Montserrat', sans-serif;
+       }
+
+       .products-list{
+        flex-direction: column;
+    }
+    
+       .product-card{
+        width: 90%;
+    }
+       
+}

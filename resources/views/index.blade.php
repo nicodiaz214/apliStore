@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Document</title>
+            <title>ApliStore</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
             <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
@@ -18,7 +18,7 @@
 
                 <header id="home">
                     <nav class="navbar navbar-expand-lg navbar-light" id="barra-inicio">
-                        <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+                        <a class="navbar-brand" href="/"><img src="img/logo.png" alt="">ApliStore</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -26,19 +26,16 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <ul class="navbar-nav ml-auto">
                             <li class="nav-item active" id="nav-links">
-                              <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item" id="nav-links">
-                              <a class="nav-link" href="#">Apps</a>
+                              <a class="nav-link" href="/applications">Apps</a>
                             </li>
                             <li class="nav-item" id="nav-links">
-                                <a class="nav-link" href="#">Login</a>
+                                <a class="nav-link" href="/login">Login</a>
                               </li>
                               <li class="nav-item" id="nav-links">
-                                <a class="nav-link" href="#">Register</a>
-                              </li>
-                              <li class="nav-item" id="nav-links">
-                                <a class="nav-link" href="#contact">Contacto</a>
+                                <a class="nav-link" href="/register">Register</a>
                               </li>
                           </ul>
                       </nav>
@@ -51,48 +48,46 @@
     <div class="product-card">
         <a href=""><img src="img/chat.png" alt=""></a>
         <h5 class="product-tittle">Chat</h5>
-        <p class="product-description">Conectate con tu gente.</p>
+        <p class="product-description">Conectate con tu gente</p>
         <button class="btn-buy"> <a href="#">ver mas</a></button>
     </div>
 
     <div class="product-card">
         <a href=""><img src="img/fitnes.png" alt=""></a>
         <h5 class="product-tittle">Fitnes</h5>
-        <p class="product-description">Ejercita tu cuerpo.</p>
+        <p class="product-description">Ejercita tu cuerpo</p>
         <button class="btn-buy"> <a href="#">ver mas</a></button>
     </div>
 
     <div class="product-card">
         <a href=""><img src="img/fotos.png" alt=""></a>
         <h5 class="product-tittle">Fotos</h5>
-        <p class="product-description">Edita tus fotos.</p>
+        <p class="product-description">Edita tus fotos</p>
         <button class="btn-buy"> <a href="#">ver mas</a></button>
     </div>
 
     </div>
-
-    <div class="products-more"><a href="#">Ver mas aplicaciones</a></div>
     </section>
 
-                <footer>
+                <footer class='footer-contact'>
                     <div class="contact" id="contact">
                     <span>Contacto</span>
-                    <form action="index.html" method="post">
+                    <form action= "/" method="post">                    
                         <div class="row">
                         <div class="col-xl-6">
-                            <input class="form-contact" type="text" class="form-control" id="name" placeholder="Nombre" autocomplete="none" required >
+                            <input class="form-contact" type="text" class="form-control" name="name" id="name" placeholder="Nombre" autocomplete="none" required >
                         </div>
                         <div class="col-xl-6">
-                            <input class="form-contact" type="text" class="form-control" id="lastename" placeholder="Apellido" autocomplete="none" required>
+                            <input class="form-contact" type="text" class="form-control" name="lastname" id="lastename" placeholder="Apellido" autocomplete="none" required>
                         </div>
                         <div class="col-xl-6">
-                            <input class="form-contact" type="text" class="form-control" id="telephone" placeholder="Telefono" autocomplete="none" required>
+                            <input class="form-contact" type="text" class="form-control" name="telephone" id="telephone" placeholder="Telefono" autocomplete="none" required>
                         </div>
                         <div class="col-xl-6">
-                            <input class="form-contact" type="email" class="form-control" id="mail" placeholder="Email" autocomplete="none" required>
+                            <input class="form-contact" type="email" class="form-control" name="email" id="mail" placeholder="Email" autocomplete="none" required>
                         </div>
                         <div class="col-xl-12">
-                            <textarea class="form-contact textarea" class="form-control" id="message" rows="6" placeholder="Mensaje" autocomplete="none" required></textarea>
+                            <textarea class="form-contact textarea" class="form-control" name="message" id="message" rows="6" placeholder="Mensaje" autocomplete="none" required></textarea>
                         </div>
                         <div class="col-xl-12">
                         <input class="checkbox" type="checkbox" class="form-check-input" id="exampleCheck1" required>
@@ -108,9 +103,7 @@
                     <div class="social-media-btn">
                             <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                             <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                            <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></i>
-                            <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                            <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>                   
                         </div>
                         <p>O'higgins 2191, 2do E. CABA</p>
                         <p>©ApliStore 2020. Todos los derechos reservados.</p>

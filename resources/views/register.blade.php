@@ -1,5 +1,5 @@
 @extends('plantilla')
-
+@section('title', 'Register')
 @section('register')
 
 <div class='register-tittle'>

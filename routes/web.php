@@ -22,4 +22,8 @@ Route::get('login', function () {
 Route::get('register', function () {
     return view('register');
 });
-Route::get('applications', 'ApplicationsController@index');
+
+Route::get('categories', 'CategoriesController@index');
+Route::get('/category/{id}', 'CategoriesController@show');
+route::get('applications', 'ApplicationsController@index');
+route::get('applications/{id}', 'ApplicationsController@show');

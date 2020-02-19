@@ -1,6 +1,6 @@
 @extends('plantilla')
 
-@section('applications')
+@section('categories')
 
 <nav class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand"></a>
@@ -11,9 +11,10 @@
 </nav>
 
 <div class="applications-category">
-
-<p>Hola</p>
+<div class="applications-list"></div>
+<h2>Listado de aplicaciones</h2>
 
 </div>
+
 
 @endsection

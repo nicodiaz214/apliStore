@@ -11,7 +11,7 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,500,700&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="css/estilo.css">
+            <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
         </head>
         <body>
             <div class="container-fluid">
@@ -54,9 +54,9 @@
 
     <div class="product-card">
         <a href=""><img src="img/fitnes.png" alt=""></a>
-        <h5 class="product-tittle">Fitnes</h5>
+        <h5 class="product-tittle">Fitness</h5>
         <p class="product-description">Ejercita tu cuerpo</p>
-        <button class="btn-buy"> <a href="#">ver mas</a></button>
+        <button class="btn-buy"> <a href="/categories/fitness">ver mas</a></button>
     </div>
 
     <div class="product-card">

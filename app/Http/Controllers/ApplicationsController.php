@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Application;
+use App\Category;
 
 class ApplicationsController extends Controller
 {
@@ -13,7 +15,11 @@ class ApplicationsController extends Controller
      */
     public function index()
     {
-        return view('applications');
+        $applications = Application::paginate(3);
+        return view('applications.index', [
+            'title' => "Listado de Apps",
+            'applications' => $applications,
+        ]);
     }
 
     /**
@@ -45,7 +51,11 @@ class ApplicationsController extends Controller
      */
     public function show($id)
     {
-        //
+        $application = Application::find($id);
+
+        return view('applications.show', [
+            'application' => $application,
+        ]);
     }
 
     /**

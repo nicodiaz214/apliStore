@@ -1,5 +1,5 @@
 @extends('plantilla')
-
+@section('title', 'Login')
 @section('login')
 <div class='login-tittle'>
 <h4>Inicia sesion</h4>

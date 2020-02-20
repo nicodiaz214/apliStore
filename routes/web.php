@@ -23,7 +23,19 @@ Route::get('register', function () {
     return view('register');
 });
 
+Auth::routes();
+
+//website
+
 Route::get('categories', 'CategoriesController@index');
 Route::get('/category/{id}', 'CategoriesController@show');
-route::get('applications', 'ApplicationsController@index');
-route::get('applications/{id}', 'ApplicationsController@show');
+route::get('/applications', 'ApplicationsController@index');
+Route::get('/applications/{id}', 'ApplicationsController@show');
+
+//desarrollador
+Route::group(['prefix' => 'developer'], function (){
+route::get('/applications/add', 'ApplicationsController@create');
+route::post('/applications', 'ApplicationsController@store');
+Route::get('/applications/{id}/edit', 'ApplicationsController@edit');
+Route::patch('/applications/{id}', 'ApplicationsController@update');
+});

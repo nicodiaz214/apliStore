@@ -308,10 +308,42 @@ html{
 
 /* APPLICATIONS - SHOW */
 
-.application-show{
+.title-app h2{
     width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2%;
+}
+
+.link-back{
+    width: 100%;
+    text-align: center;
+}
+
+.application-show{
+    width: 50%;
     height: 100vh;
-    background-color: aquamarine;
+    padding: 2%;
+    margin: 0 auto;
+}
+
+.card-img{
+    width: 100%;
+    padding: 5%;
+}
+
+/* APPLICATIONS - CREATE */
+
+.create-applications{
+    width: 80%;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: mediumslateblue;
+}
+
+.create-applications h1{
+    width: 100%;
+    text-align: center;
 }
 
 /* FOOTER */

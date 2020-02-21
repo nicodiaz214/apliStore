@@ -3,11 +3,11 @@
 @section('content')
 
 <div class="create-applications">
-<h1>Crear Producto</h1>
+<h1>Subí tu app</h1>
 @include('applications.form', [
     'method' => 'post',
-    'url' => '/applications',
-    ]);
+    'url' => '/developer/applications/add',
+    ])
 
 @endsection
 </div>

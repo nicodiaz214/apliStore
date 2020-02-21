@@ -8,6 +8,18 @@
     <p class="text-danger">{{ $errors->first('name') }}</p>
 </div>
 
+
+<div class="form-group">
+    <label for="category_id"><strong>Categoria:</strong></label>
+    <div class="col-12" >
+    <select name="category_id" id="category_id" class="form-control" required>
+    <option value="1">Chat</option>
+    <option value="2">Fitness</option>
+    <option value="3">Fotos</option>
+    </select>
+    </div>
+    </div>
+
   <div class="form-group">
     <label for="exampleFormControlFile1"><strong>Imagen de la app:</strong></label>
     <input type="file" class="form-control-file" name="image_url" id="image_url">
@@ -27,8 +39,10 @@
 </div>
 
 <div class="form-group">
-    <button class="btn btn-primary">Crear</button>
+    <button class="btn btn-success">Crear</button>
 </div>
-
 </form>
 
+<div class="btn-back">
+<a href="/applications"><button class="btn btn-primary">volver</button></a>
+</div>

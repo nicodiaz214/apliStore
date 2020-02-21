@@ -46,6 +46,7 @@ class ApplicationsController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
+            'user_id' => 'required',
             'image_url' => 'required',
             'description' => 'required',
             'price' => 'required',
@@ -62,7 +63,7 @@ class ApplicationsController extends Controller
 
         $application = Application::create($request->all());
 
-        return redirect('/applications/' . $application->id);
+        return redirect('/developer/applications/add' . $application->id);
     }
 
     /**

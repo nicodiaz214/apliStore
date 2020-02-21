@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>@yield('title', 'ApliStore')</title>
+            <title>ApliStore</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
             <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
@@ -18,7 +18,7 @@
 
                 <header id="home">
                     <nav class="navbar navbar-expand-lg navbar-light" id="barra-inicio">
-                    <a class="navbar-brand" href="/"><img src="img/logo.png" alt="">ApliStore</a>
+                        <a class="navbar-brand" href="/"><img src="img/logo.png" alt="">ApliStore</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -31,12 +31,32 @@
                             <li class="nav-item" id="nav-links">
                               <a class="nav-link" href="/applications">Apps</a>
                             </li>
+                            @guest
                             <li class="nav-item" id="nav-links">
-                              <a class="nav-link" href="/login">Login</a>
+                                <a class="nav-link" href="/login">Login</a>
                               </li>
                               <li class="nav-item" id="nav-links">
                                 <a class="nav-link" href="/register">Register</a>
                               </li>
+                            @else
+                              <li class="nav-item dropdown" >
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}<span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @endguest
                           </ul>
                       </nav>
                 </header>
@@ -46,6 +66,7 @@
                 @yield('applications')
                 @yield('categories')
                 @yield('applications-show')
+                @yield('content')
 
                <section class="login-form">
 

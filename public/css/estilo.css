@@ -58,11 +58,11 @@ html{
 /* HEADER */
 
 #barra-inicio{
-    background-color: #555555;
+    background-color: #dfdfdf;
 }
 
 #barra-inicio a{
-    color: #ffffff;
+    color: black;
 }
 
 .navbar-toggle{
@@ -84,92 +84,78 @@ html{
 }
 
 #nav-links:hover{
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #a90329;
     transition: ease-in-out .5s;
 }
 
 /* MAIN */
 
-/* PRODUCTS */
-
-.products-off{
+/* JUMBOTRON */
+.subscription{
     height: 100vh;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.products-off .products-off-tittle h2{
-    font-size: 40px;
-    font-weight: bold;
-    padding: 2%;
-    width: 100%;
-    display: block;
-    text-align: center;
-}
-
-.products-list{
-    width: 100%;
+    background: url(../img/fondo.jpg);
     display: flex;
-    flex-direction: row;
-    padding: 2%; 
-}
-
-.product-card{
-    width: 30%;
-    border: 1px solid rgb(224, 224, 224);
-    box-shadow: dimgrey 5px 5px 5px;
-    border-radius: 5%;
-    text-align: center;
-    margin-top: 0;
-    margin: 3%;
-}
-
-.product-card img{
-    width: 50%;
-    padding: 5%;
     align-items: center;
-    filter: grayscale(80%);
 }
 
-.product-card img:hover{
-    filter: grayscale(0%);
-}
-
-.product-tittle{
-   font-size: 20px;
-   font-weight: bold;
-   padding: 1%;
-   margin-left: 5%;
-}
-
-.product-description{
-    padding: 1%;
-    margin-left: 5%;
-    margin: 0;
- }
- 
- .btn-buy{
-     width: 50%;
-     height: 10%;
-     margin-bottom: 8%;
-     background-color: #2e2b2d;
-     border: none;
-     text-decoration: none;
- }
-
- .btn-buy a{
+.jumbotron{
+    font-family: 'Montserrat', sans-serif;
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.6);
     color: white;
-    text-decoration: none;
-}
- 
-.btn-buy:hover{
-    background-color: goldenrod; 
-    transition: 0.5s ease;
 }
 
-.btn-buy a:hover{
-    color: black;
-    transition: 0.5s ease;
+.jumbotron .display-4{
+font-weight: bold;
+}
+
+.jumbotron #btn-subscription{
+width: 150px;
+background-color: transparent;
+border: none;
+text-align: left;
+border: 1px solid white;
+color: white;
+}
+
+.jumbotron #btn-subscription:hover{
+width: 100%;
+background-color: goldenrod;
+border: none;
+text-align: center;
+transition: 0.5s ease;
+border: 1px solid transparent;
+}
+
+
+/* SOBRE NOSOTROS */
+.about-us{
+    height: 100vh;
+    width: 100%;
+    background-color: azure; 
+}
+
+.about-us-info{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1%;
+}
+
+.about-us-info span{
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    font-size: 90px; 
+    font-weight: bold;
+    width: 100%;
+}
+
+.about-us-info p{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px; 
+    width: 50%;
+    margin: 0 auto;
 }
 
 /* APPLICATIONS */
@@ -282,6 +268,15 @@ html{
     height: 100vh;
 }
 
+.card{
+    border: none;
+}
+
+.col-12{
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .form-group{
     width: 30%;
     margin: 0 auto;
@@ -293,10 +288,9 @@ html{
     height: 100vh;
 }
 
-.login-tittle{
+.card-header h3{
     width: 100%;
     text-align: center;
-    margin-top: 2%;
 }
 
 .form-group{
@@ -344,6 +338,12 @@ html{
 .create-applications h1{
     width: 100%;
     text-align: center;
+}
+
+.btn-back{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 /* FOOTER */
@@ -449,7 +449,7 @@ footer p{
     font-family: 'Roboto Mono', monospace;
 }
 
-#phone, #email{
+#phone, #correo{
     color: white;
     font-size: 25px;
     font-weight: 700;
@@ -512,7 +512,7 @@ footer p{
         font-size: 20px;  
     }
     
-    #phone, #email{
+    #phone, #correo{
         font-size: 15px;
         font-weight: normal;
     }
@@ -560,6 +560,15 @@ footer p{
     .applications-card{
         width: 90%;
     }
+
+    .subscription{
+        min-height: 800px;
+        text-align: center;
+    }
+    
+    .jumbotron{
+        width: 90%;
+    }
        
 }
 
@@ -600,7 +609,7 @@ footer p{
         font-size: 20px;  
     }
     
-    #phone, #email{
+    #phone, #correo{
         font-size: 15px;
         font-weight: normal;
     }
@@ -645,6 +654,15 @@ footer p{
     .applications-card{
         width: 90%;
     }
+
+    .subscription{
+        min-height: 800px;
+        text-align: center;
+    }
+    
+    .jumbotron{
+        width: 90%;
+    }
        
 }
 
@@ -685,7 +703,7 @@ footer p{
         font-size: 25px;  
     }
     
-    #phone, #email{
+    #phone, #correo{
         font-size: 15px;
         font-weight: normal;
     }

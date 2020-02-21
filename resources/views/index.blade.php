@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>ApliStore</title>
+            <title>ApliSports</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
             <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
@@ -18,7 +18,7 @@
 
                 <header id="home">
                     <nav class="navbar navbar-expand-lg navbar-light" id="barra-inicio">
-                        <a class="navbar-brand" href="/"><img src="img/logo.png" alt="">ApliStore</a>
+                        <a class="navbar-brand" href="/"><img src="img/logo.png" alt="">ApliSports</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -31,43 +31,55 @@
                             <li class="nav-item" id="nav-links">
                               <a class="nav-link" href="/applications">Apps</a>
                             </li>
+                            @guest
                             <li class="nav-item" id="nav-links">
                                 <a class="nav-link" href="/login">Login</a>
                               </li>
                               <li class="nav-item" id="nav-links">
                                 <a class="nav-link" href="/register">Register</a>
                               </li>
+                            @else
+                            <li class="nav-item" id="nav-links">
+                                <a class="nav-link" href="/login">{{ Auth::user()->name }}</a>
+                              </li>
+                                <li class="nav-item" >
+                                    <a class="nav-link" id="nav-links" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                            </li>
+                            @endguest
                           </ul>
                       </nav>
                 </header>
 
-    <section class="products-off">
-    <div class="products-off-tittle"><h2>Aplicaciones</h2></div>
-    <div class="products-list">
-
-    <div class="product-card">
-        <a href=""><img src="img/chat.png" alt=""></a>
-        <h5 class="product-tittle">Chat</h5>
-        <p class="product-description">Conectate con tu gente</p>
-        <button class="btn-buy"> <a href="#">ver mas</a></button>
-    </div>
-
-    <div class="product-card">
-        <a href=""><img src="img/fitnes.png" alt=""></a>
-        <h5 class="product-tittle">Fitness</h5>
-        <p class="product-description">Ejercita tu cuerpo</p>
-        <button class="btn-buy"> <a href="/categories/fitness">ver mas</a></button>
-    </div>
-
-    <div class="product-card">
-        <a href=""><img src="img/fotos.png" alt=""></a>
-        <h5 class="product-tittle">Fotos</h5>
-        <p class="product-description">Edita tus fotos</p>
-        <button class="btn-buy"> <a href="#">ver mas</a></button>
-    </div>
-
-    </div>
+                @guest
+                <section class="subscription">
+        <div class="jumbotron">
+            <h1 class="display-4">Conoces ApliSports?</h1>
+            <p class="lead">Descubrí las aplicaciones deportivas que marcan tendencia!</p>
+            <hr class="my-8">
+            <p>Si sos desarrollador podes vender tus apps en nuestro sitio.</p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" id="btn-subscription" href="/register" role="button">Registrate!</a>
+            </p>
+          </div>
     </section>
+@else
+<p>Hola Guanaco</p>     
+@endguest
+            <section class="about-us" id="about-us">
+                <div class="about-us-info">
+                    <span>Sobre Nosotros</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate corporis beatae alias, neque unde, obcaecati totam explicabo harum recusandae quaerat pariatur? Quo ipsam, aliquam totam sequi in eveniet, fugiat ut atque hic quae ullam laboriosam itaque iusto ab. Culpa laborum animi laudantium, error odio delectus sed maiores rem consequatur facere!</p>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia quae magnam soluta explicabo deleniti laborum neque, nobis minima libero vitae odit similique nam, amet obcaecati distinctio. Nemo earum alias consequatur doloribus eos exercitationem, libero quos atque nam laborum magnam adipisci qui in quasi possimus facere laudantium nulla illum. Voluptates, libero.</p>     
+                </div>
+            </section>                    
 
                 <footer class='footer-contact'>
                     <div class="contact" id="contact">
@@ -97,7 +109,7 @@
                         </div>
                     </form>
                     <div class="contact-bottom">
-                    <a href="#" id="email">contacto@aplistore.com</a>
+                    <a href="#" id="correo">contacto@aplistore.com</a>
                     <a href="#" id="phone">+ 54 11 4567 1234</a>
                     </div>
                     <div class="social-media-btn">

@@ -16,12 +16,6 @@ Route::get('welcome', function () {
 });
 
 Route::get('/', 'IndexController@index');
-Route::get('login', function () {
-    return view('login');
-});
-Route::get('register', function () {
-    return view('register');
-});
 
 Auth::routes();
 
@@ -35,7 +29,8 @@ Route::get('/applications/{id}', 'ApplicationsController@show');
 //desarrollador
 Route::group(['prefix' => 'developer'], function (){
 route::get('/applications/add', 'ApplicationsController@create');
-route::post('/applications', 'ApplicationsController@store');
+route::post('/applications/add', 'ApplicationsController@store');
 Route::get('/applications/{id}/edit', 'ApplicationsController@edit');
 Route::patch('/applications/{id}', 'ApplicationsController@update');
 });
+

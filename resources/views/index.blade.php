@@ -31,22 +31,25 @@
                             <li class="nav-item" id="nav-links">
                               <a class="nav-link" href="/applications">Apps</a>
                             </li>
+                            <li class="nav-item" id="nav-links">
+                              <a class="nav-link" href="#about-us">Sobre Nosotros</a>
+                            </li>
+                            <li class="nav-item" id="nav-links">
+                              <a class="nav-link" href="#contact">Contacto</a>
+                            </li>
                             @guest
                             <li class="nav-item" id="nav-links">
                                 <a class="nav-link" href="/login">Login</a>
                               </li>
-                              <li class="nav-item" id="nav-links">
-                                <a class="nav-link" href="/register">Register</a>
-                              </li>
                             @else
-                            <li class="nav-item" id="nav-links">
-                                <a class="nav-link" href="/login">{{ Auth::user()->name }}</a>
+                              <li class="nav-item" id="nav-links">
+                                <a class="nav-link" href="/userprofile">{{ Auth::user()->name }}</a>
                               </li>
                                 <li class="nav-item" >
-                                    <a class="nav-link" id="nav-links" href="{{ route('logout') }}"
+                                    <a class="nav-link" title="Logout" id="nav-links" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    <i class="fas fa-sign-out-alt"></i>
+                                    <i class="fas fa-times"></i>
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -70,11 +73,15 @@
           </div>
     </section>
 @else
-<p>Hola Guanaco</p>     
+
+<section class="user-log">
+<p>Hola Guanaco</p>
+</section> 
+
 @endguest
             <section class="about-us" id="about-us">
                 <div class="about-us-info">
-                    <span>Sobre Nosotros</span>
+                    <span>ApliSports</span>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate corporis beatae alias, neque unde, obcaecati totam explicabo harum recusandae quaerat pariatur? Quo ipsam, aliquam totam sequi in eveniet, fugiat ut atque hic quae ullam laboriosam itaque iusto ab. Culpa laborum animi laudantium, error odio delectus sed maiores rem consequatur facere!</p>
                     <br>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia quae magnam soluta explicabo deleniti laborum neque, nobis minima libero vitae odit similique nam, amet obcaecati distinctio. Nemo earum alias consequatur doloribus eos exercitationem, libero quos atque nam laborum magnam adipisci qui in quasi possimus facere laudantium nulla illum. Voluptates, libero.</p>     
@@ -84,7 +91,8 @@
                 <footer class='footer-contact'>
                     <div class="contact" id="contact">
                     <span>Contacto</span>
-                    <form action= "/" method="post">                    
+                    <form action= "/" method="post">
+                    @csrf 
                         <div class="row">
                         <div class="col-xl-6">
                             <input class="form-contact" type="text" class="form-control" name="name" id="name" placeholder="Nombre" autocomplete="none" required >
@@ -93,7 +101,7 @@
                             <input class="form-contact" type="text" class="form-control" name="lastname" id="lastename" placeholder="Apellido" autocomplete="none" required>
                         </div>
                         <div class="col-xl-6">
-                            <input class="form-contact" type="text" class="form-control" name="telephone" id="telephone" placeholder="Telefono" autocomplete="none" required>
+                            <input class="form-contact" type="text" class="form-control" name="phone" id="telephone" placeholder="Telefono" autocomplete="none" required>
                         </div>
                         <div class="col-xl-6">
                             <input class="form-contact" type="email" class="form-control" name="email" id="mail" placeholder="Email" autocomplete="none" required>

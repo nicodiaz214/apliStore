@@ -24,6 +24,14 @@ class ApplicationsController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $applications =Application::name($request->get('name'))->orderBy('name', 'DESC')->paginate(3);
+
+        return view('applications.index',  ['applications' => $applications]);
+    }
+    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -129,4 +137,13 @@ class ApplicationsController extends Controller
     {
         //
     }
+
+    public function category() {
+        return $this->belongsTo('App\Category');
+    }
+
+    public function users() {
+        return $this->belongsToMany('App\User', 'user_id', 'application_id');
+    }
+
 }

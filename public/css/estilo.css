@@ -128,6 +128,12 @@ transition: 0.5s ease;
 border: 1px solid transparent;
 }
 
+/* USER LOG */
+.user-log{
+    width: 100%;
+    height: 100vh;
+}
+
 
 /* SOBRE NOSOTROS */
 .about-us{
@@ -154,7 +160,7 @@ border: 1px solid transparent;
 .about-us-info p{
     font-family: 'Roboto Mono', monospace;
     font-size: 20px; 
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -569,6 +575,23 @@ footer p{
     .jumbotron{
         width: 90%;
     }
+
+    .about-us{
+        min-height: 800px;
+    }
+    
+    .about-us-info{
+        width: 90%;
+    }
+    
+    .about-us-info span{
+        font-size: 40px; 
+    }
+    
+    .about-us-info p{
+        font-size: 12px; 
+        width: 100%;
+    }
        
 }
 
@@ -663,6 +686,23 @@ footer p{
     .jumbotron{
         width: 90%;
     }
+
+    .about-us{
+        min-height: 800px;
+    }
+    
+    .about-us-info{
+        width: 90%;
+    }
+    
+    .about-us-info span{
+        font-size: 40px; 
+    }
+    
+    .about-us-info p{
+        font-size: 18px; 
+        width: 100%;
+    }
        
 }
 
@@ -748,6 +788,19 @@ footer p{
     
     .applications-card{
         width: 90%;
+    }
+
+    .about-us-info{
+        width: 50%;
+    }
+    
+    .about-us-info span{
+        font-size: 40px; 
+    }
+    
+    .about-us-info p{
+        font-size: 18px; 
+        width: 100%;
     }
        
 }

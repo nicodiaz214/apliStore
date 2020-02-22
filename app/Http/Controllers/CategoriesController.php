@@ -10,7 +10,22 @@ use Auth;
 
 class CategoriesController extends Controller
 {
-    public function index(){
-        return view('categories');
+    public function index()
+    {
+        $categories = Category::paginate(3);
+        return view('categories.index', [
+            'title' => "Listado de Categorias",
+            'categories' => $categories,
+        ]);
     }
+
+    public function show($id)
+    {
+        $categories = Category::find($id);
+
+        return view('categories.show', [
+            'categories' => $categories,
+        ]);
+    }
+
 }

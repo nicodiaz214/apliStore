@@ -15,16 +15,15 @@ Route::get('welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', 'IndexController@index');
-
-Auth::routes();
-
 //website
-
+Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@create');
+Route::post('/', 'IndexController@store');
 Route::get('categories', 'CategoriesController@index');
-Route::get('/category/{id}', 'CategoriesController@show');
-route::get('/applications', 'ApplicationsController@index');
+Route::get('/categories/{id}', 'CategoriesController@show');
+Route::get('/applications', 'ApplicationsController@index');
 Route::get('/applications/{id}', 'ApplicationsController@show');
+Route::get('/applications', 'ApplicationsController@search');
 
 //desarrollador
 Route::group(['prefix' => 'developer'], function (){
@@ -33,4 +32,8 @@ route::post('/applications/add', 'ApplicationsController@store');
 Route::get('/applications/{id}/edit', 'ApplicationsController@edit');
 Route::patch('/applications/{id}', 'ApplicationsController@update');
 });
+
+
+//login - registro
+Auth::routes();
 

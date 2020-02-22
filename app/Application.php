@@ -11,4 +11,12 @@ class Application extends Model
     protected $fillable = [
     'user_id', 'category_id', 'name', 'image_url', 'descripction', 'price',
     ];
+
+public function scopeName($query, $name)
+{
+    if (trim($name) != ""){
+        $query->where('name', "LIKE", "%$name%");
+    }
+}
+
 }

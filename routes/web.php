@@ -25,12 +25,15 @@ Route::get('/applications', 'ApplicationsController@index');
 Route::get('/applications/{id}', 'ApplicationsController@show');
 Route::get('/applications', 'ApplicationsController@search');
 
+//user
+Route::get('/userprofile', 'UsersController@index');	// Ruta al perfil del usuario
+
 //desarrollador
-Route::group(['prefix' => 'developer'], function (){
+Route::group(['prefix' => 'developer', 'middleware'=>'developer'], function (){
 route::get('/applications/add', 'ApplicationsController@create');
 route::post('/applications/add', 'ApplicationsController@store');
 Route::get('/applications/{id}/edit', 'ApplicationsController@edit');
-Route::patch('/applications/{id}', 'ApplicationsController@update');
+//Route::patch('/applications/{id}', 'ApplicationsController@update');
 });
 
 

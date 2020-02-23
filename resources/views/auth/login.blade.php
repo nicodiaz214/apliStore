@@ -1,5 +1,7 @@
 @extends('plantilla')
-
+@section('title')
+Login
+@endsection
 @section('content')
         <div class="form-login">
         <div class="col-12">

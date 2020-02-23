@@ -26,7 +26,7 @@ class ApplicationsController extends Controller
 
     public function search(Request $request)
     {
-        $applications =Application::name($request->get('name'))->orderBy('name', 'DESC')->paginate(3);
+        $applications =Application::name($request->get('name'))->orderBy('name', 'ASC')->paginate(3);
 
         return view('applications.index',  ['applications' => $applications]);
     }
@@ -52,26 +52,31 @@ class ApplicationsController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate($request,[
             'name' => 'required',
-            'user_id' => 'required',
-            'image_url' => 'required',
+            'category_id' => 'required',
             'description' => 'required',
             'price' => 'required',
         ]);
 
-        if ($request->hasFile('image_url')) {
-            $image = $request->file('image_url');
-            //$name = time().'.'.$image->getClientOriginalExtension();
-            $name = $request->code.'_'.$request->name.'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/img/Applications');
-            $image->move($destinationPath, $name);
-            //$image->save();   // save() solo sirve para Nuevas Instancias de clase, no para un archivo.
+        if ($request->hasFile('image_url')){
+            $file = $request->file('image_url');
+            $name = time().$file->getClientOriginalName();
+            $destinationPath = public_path('/img/');
+            $file->move($destinationPath, $name);
         }
 
-        $application = Application::create($request->all());
+        $application = Application::create([
+            'user_id' => auth()->user()->id,
+            'name' => $request->name,
+            'image_url' => 'img/'.$name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'category_id' => $request->category_id,
+            ]);
 
-        return redirect('/developer/applications/add' . $application->id);
+        return redirect('/developer/applications/add');
     }
 
     /**

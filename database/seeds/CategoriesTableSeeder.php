@@ -13,18 +13,33 @@ class CategoriesTableSeeder extends Seeder
     {
         DB::table('categories')
         ->insert([
-            'name' => 'Chat',
-            'image' => 'img/chat.png',
+            'name' => 'Running',
+            'image' => 'img/running.png',
         ]);
         DB::table('categories')
         ->insert([
-            'name' => 'Fitness',
-            'image' => 'img/fitnes.png',
+            'name' => 'Nutricion',
+            'image' => 'img/nutricion.png',
         ]);
         DB::table('categories')
         ->insert([
-            'name' => 'Fotos',
-            'image' => 'img/fotos.png',
+            'name' => 'Musculacion',
+            'image' => 'img/musculacion.png',
+        ]);
+        DB::table('categories')
+        ->insert([
+            'name' => 'Elongacion',
+            'image' => 'img/elongacion.png',
+        ]);
+        DB::table('categories')
+        ->insert([
+            'name' => 'Yoga',
+            'image' => 'img/yoga.png',
+        ]);
+        DB::table('categories')
+        ->insert([
+            'name' => 'Indumentaria',
+            'image' => 'img/indumentaria.png',
         ]);
 }
 }

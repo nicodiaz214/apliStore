@@ -13,9 +13,12 @@
     <label for="category_id"><strong>Categoria:</strong></label>
     <div class="col-12" >
     <select name="category_id" id="category_id" class="form-control" required>
-    <option value="1">Chat</option>
-    <option value="2">Fitness</option>
-    <option value="3">Fotos</option>
+    <option value="1">Running</option>
+    <option value="2">Nutrición</option>
+    <option value="3">Musculación</option>
+    <option value="4">Elongación</option>
+    <option value="5">Yoga</option>
+    <option value="6">Indumentaria</option>
     </select>
     </div>
     </div>
@@ -44,5 +47,5 @@
 </form>
 
 <div class="btn-back">
-<a href="/applications"><button class="btn btn-primary">volver</button></a>
+<a href="/userprofile"><button class="btn btn-primary">volver</button></a>
 </div>

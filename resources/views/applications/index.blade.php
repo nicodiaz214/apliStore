@@ -1,5 +1,7 @@
 @extends('plantilla')
-
+@section('title')
+Listado de Apps
+@endsection
 @section('applications')
 
 <nav class="navbar navbar-light bg-light justify-content-between">

@@ -3,14 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Application;
-use App\Category;
+
 use App\User;
-use App\Contact;
 use Auth;
 
-class IndexController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +16,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-   
-        return view('/');
- 
+        $logued = \Auth::user();
+
+        return view('user.show', ['user' => $logued, 'mensaje' => null, 'pattern' => null]);
     }
 
     /**
@@ -31,7 +28,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('index', ['contact' => new Contact,]);
+        //
     }
 
     /**
@@ -42,25 +39,7 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-        //$contact = new Contact;
-        //$contact->name = $request->input('name');
-        //$contact->lastname = $request->input('lastname');
-        //$contact->phone = $request->input('phone');
-        //$contact->email = $request->input('email');
-        //$contact->message = $request->input('message');
-        //$contact->save();
-
-        $this->validate($request,[
-            'name' => 'required',
-            'lastname' => 'required',
-            'phone' => 'required|numeric',
-            'email' => 'required',
-            'message' => 'required',
-        ]);
-
-        Contact::create($request->all());
-
-        return redirect('/');
+        //
     }
 
     /**
@@ -71,7 +50,7 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -82,7 +61,9 @@ class IndexController extends Controller
      */
     public function edit($id)
     {
-        //
+        $logued = \Auth::user();
+
+        return view('user.edit', ['user' => $logued, 'mensaje' => null, 'pattern' => null ]);
     }
 
     /**

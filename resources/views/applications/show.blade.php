@@ -1,5 +1,7 @@
 @extends('plantilla')
-
+@section('title')
+{{$application->name}}
+@endsection
 @section('applications-show')
 
 <div class='title-app'>

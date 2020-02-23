@@ -11,15 +11,15 @@ class ApplicationsTableSeeder extends Seeder
      */
     public function run()
     {
-        //DB::table('applications')
-        //->insert([
-        //  'user_id' => '1',
-        //   'category_id' => '2',
-        //  'name' => 'Rapido',
-        //   'image_url' => 'img/rapido.png',
-        //   'description' => 'Mejora tus carreras',
-        //  'price' => '100',
-        //]);
+        DB::table('applications')
+        ->insert([
+           'user_id' => '1',
+           'category_id' => '3',
+           'name' => 'Abs 2020',
+           'image_url' => 'img/abs.png',
+           'description' => 'Abdominales de hierro',
+          'price' => '100',
+        ]);
 
         factory(\App\Application::class,20)->create();
 }

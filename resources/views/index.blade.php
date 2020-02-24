@@ -74,9 +74,13 @@
     </section>
 @else
 
-<section class="user-log">
-<p>Hola Guanaco</p>
-</section> 
+@foreach ($categories as $category)
+<div class="applications-card">
+        <h5 class="applications-tittle">{{$category->name}}</h5>
+    </div>
+@endforeach
+
+
 
 @endguest
             <section class="about-us" id="about-us">

@@ -17,23 +17,22 @@ Route::get('welcome', function () {
 
 //website
 Route::get('/', 'IndexController@index');
-Route::get('/', 'IndexController@create');
+//Route::get('/', 'IndexController@create');
 Route::post('/', 'IndexController@store');
-Route::get('categories', 'CategoriesController@index');
-Route::get('/categories/{id}', 'CategoriesController@show');
+Route::get('/userprofile', 'UsersController@index');	// Ruta al perfil del usuario
 Route::get('/applications', 'ApplicationsController@index');
 Route::get('/applications/{id}', 'ApplicationsController@show');
 Route::get('/applications', 'ApplicationsController@search');
 
-//user
-Route::get('/userprofile', 'UsersController@index');	// Ruta al perfil del usuario
-
 //desarrollador
 Route::group(['prefix' => 'developer', 'middleware'=>'developer'], function (){
-route::get('/applications/add', 'ApplicationsController@create');
-route::post('/applications/add', 'ApplicationsController@store');
+Route::get('/applications/list','ApplicationsController@list');
+Route::get('/applications/add', 'ApplicationsController@create');
+Route::post('/applications/add', 'ApplicationsController@store');
 Route::get('/applications/{id}/edit', 'ApplicationsController@edit');
-//Route::patch('/applications/{id}', 'ApplicationsController@update');
+Route::patch('/applications/{id}', 'ApplicationsController@update');
+Route::delete('/applications/{id}', 'ApplicationsController@destroy');
+
 });
 
 

@@ -5,8 +5,8 @@
 <div class="create-applications">
 <h1>Editar un Producto</h1>
 @include('applications.form', [
-    'method' => 'post',
-    'url' => '/applications',
+    'method' => 'patch',
+    'url' => '/developer/applications/'.$application->id,
     ]);
 
 @endsection

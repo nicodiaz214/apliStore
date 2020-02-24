@@ -352,6 +352,29 @@ border: 1px solid transparent;
     justify-content: center;
 }
 
+/* app-list */
+
+.app-list{
+    height: 100vh;
+    text-align: center;
+}
+
+#app-list-table{
+    margin: 0 auto;
+}
+
+.edit-delete{
+    display: flex;
+    margin-left: 2%;
+    flex-direction: row;
+}
+
+.edit-delete form button{
+    justify-content: end;
+    margin: 5px;
+}
+
+
 /* FOOTER */
 
 footer{

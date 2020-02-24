@@ -19,9 +19,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-   
-        return view('/');
- 
+        $categories = Category::all();
+
+        return view('index', ['categories' => $categories]);
     }
 
     /**
@@ -31,7 +31,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        return view('index', ['contact' => new Contact,]);
+        //return view('index', ['contact' => new Contact,]);
     }
 
     /**

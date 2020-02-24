@@ -41,9 +41,15 @@
     <p class="text-danger">{{ $errors->first('price') }}</p>
 </div>
 
+@if ($method == 'post')
 <div class="form-group">
     <button class="btn btn-success">Crear</button>
 </div>
+@elseif ($method == 'patch')
+<div class="form-group">
+    <button class="btn btn-info">Editar</button>
+</div>
+@endif
 </form>
 
 <div class="btn-back">

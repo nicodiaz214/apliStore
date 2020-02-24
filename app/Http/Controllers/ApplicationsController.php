@@ -24,6 +24,14 @@ class ApplicationsController extends Controller
         ]);
     }
 
+    public function list()
+    {
+        $applications = auth()->user()->applications()->get();
+        return view('user.list', [
+            'applications' => $applications,
+        ]);
+    }
+
     public function search(Request $request)
     {
         $applications =Application::name($request->get('name'))->orderBy('name', 'ASC')->paginate(3);
@@ -104,6 +112,14 @@ class ApplicationsController extends Controller
     {
         $application = Application::find($id);
 
+        $user_app = auth()->user()->applications()->get();
+
+        foreach ($user_app as $app) {
+            if ($app->id != $id) {
+                return abort(403, 'No tienes permiso para acceder');
+            }
+        }
+        
         return view('applications.edit',[
             'application' => $application,
         ]);
@@ -120,16 +136,23 @@ class ApplicationsController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'image_url' => 'required',
+            'category_id' => 'required',
             'description' => 'required',
             'price' => 'required',
         ]);
 
+        if ($request->hasFile('image_url')){
+            $file = $request->file('image_url');
+            $name = time().$file->getClientOriginalName();
+            $destinationPath = public_path('/img/');
+            $file->move($destinationPath, $name);
+        }
+
         $application = Application::find($id);
 
-        $application-> update($request->all());
+        $application->update($request->all());
 
-        return redirect('/applications/' . $products->id);
+        return redirect('/developer/applications/list');
     }
 
     /**
@@ -140,15 +163,13 @@ class ApplicationsController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $application = Application::findOrFail($id);
 
-    public function category() {
-        return $this->belongsTo('App\Category');
-    }
+        $application-> delete();
 
-    public function users() {
-        return $this->belongsToMany('App\User', 'user_id', 'application_id');
+        \Session::flash('alert-success', 'Producto eliminado correctamente !!!');
+
+        return redirect()->back();
     }
 
 }

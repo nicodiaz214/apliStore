@@ -164,6 +164,41 @@ border: 1px solid transparent;
     margin: 0 auto;
 }
 
+/* CATEGORIAS */
+
+.stock {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    margin: 0 auto;
+    height: 100vh;
+  }
+  
+  .stock h2 {
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    font-size: 90px; 
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .stock .stock-productos {
+    width: 33%;
+    text-align: center;
+  }
+  
+  .stock .stock-productos a img {
+    width: 50%;
+    filter: grayscale(90%);
+  }
+  
+  .stock .stock-productos a img:hover {
+    filter: grayscale(0%);
+  }
+  
+
 /* APPLICATIONS */
 
 .applications-category{
@@ -615,6 +650,27 @@ footer p{
         font-size: 12px; 
         width: 100%;
     }
+
+    /* CATEGORIAS */
+
+    .stock {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: none;
+  }
+  
+  .stock h2 {
+    font-size: 40px; 
+  }
+  
+  .stock .stock-productos {
+    width: 90%;
+  }
+  
+  .stock .stock-productos a img {
+    width: 50%;
+  }
        
 }
 
@@ -726,6 +782,30 @@ footer p{
         font-size: 18px; 
         width: 100%;
     }
+    
+    /* CATEGORIAS */
+
+.stock {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: 1500px;
+    
+  }
+  
+  .stock h2 {
+    font-size: 40px; 
+  }
+  
+  .stock .stock-productos {
+    width: 90%;
+    padding: 5%;
+  }
+  
+  .stock .stock-productos a img {
+    width: 30%;
+  }
        
 }
 

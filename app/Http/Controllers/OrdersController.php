@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Application;
 use App\Category;
+use App\User;
+use App\Order;
+use Auth;
 
-
-class CategoriesController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +18,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        // Sólo Productos 'Activos'
-        $applications = Application::paginate(3);
-        return view('categories.index', ['categories' => $categories,'applications' => $applications]);    
+        return view('orders.list');      
     }
 
     /**
@@ -29,7 +28,17 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('orders.list',[
+            'orders' => new Order,
+        ]);
+    }
+
+    public function list()
+    {
+        $orders = auth()->user()->application()->get();
+        return view('orders.list', [
+            'orders' => $orders,
+        ]);
     }
 
     /**
@@ -40,7 +49,22 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request,[
+            'user_id' => 'required',
+            'application_id' => 'required',
+            'price' => 'required',
+        ]);
+
+        $order = Order::create([
+            'user_id' => auth()->user()->id,
+            'application_id' => $request->application_id,
+            'price' => $request->price,
+            ]);
+
+            \Session::flash('alert-success', 'Gracias por la compra!');
+
+            return view('orders.list');
     }
 
     /**
@@ -51,10 +75,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $category = Category::findOrFail($id);
-        $applications = $category->applications()->paginate(3);
-        $categories = Category::all();
-        return view('categories.show', ['categories' => $categories, 'category' => $category, 'applications' => $applications]);
+        //
     }
 
     /**

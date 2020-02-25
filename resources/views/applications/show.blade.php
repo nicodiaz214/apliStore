@@ -2,13 +2,14 @@
 @section('title')
 {{$application->name}}
 @endsection
-@section('applications-show')
+@section('content')
 
 <div class='title-app'>
 <h2> {{$application->name}}</h2>
 </div>
 
 <div class="application-show">
+<hr>
 <div class="card mb-3">
   <div class="row no-gutters">
     <div class="col-md-4 col-xl-6">
@@ -22,7 +23,14 @@
         <hr>
         <p class="card-text"><strong>Precio:</strong> ${{$application->price}}</p>
         <hr>
+        <form action="/userprofile/orders" method="post">
+        @csrf
+        <input type="hidden" name="application_id" id="" value="{{$application->id}}">
+        <input type="hidden" type="text" name="user_id" id="" value="{{auth::user()->id}}">
+        <input type="hidden" type="text" name="price" id="" value="{{$application->price}}">
+        
         <button type="submit" class="btn btn-primary">Comprar</button>
+        </form>
         <hr>
       </div>
     </div>
@@ -30,7 +38,7 @@
   <hr>
 </div>
 <div class='link-back'>
-<a href="/applications">volver</a>
+<a href="/applications"><button class="btn btn-primary">Volver</button></a>
 </div>
 </div>
 

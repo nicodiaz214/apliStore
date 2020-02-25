@@ -1,31 +1,35 @@
 @extends('plantilla')
+@section('title')
+Listado de Apps
+@endsection
 
 @section('content')
 
-<div class='title-app'>
-<h2> {{$categories->name}}</h2>
-</div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{$category->name}}</li>
+  </ol>
+</nav>
 
-<div class="application-show">
-<div class="card mb-3">
-  <div class="row no-gutters">
-    <div class="col-md-4 col-xl-6">
-      <img src="{{ asset($categories->image) }}" class="card-img" alt="...">
+<div class="applications-category">
+
+<h2> Listado de Apps de {{$category->name}}</h2>
+<section class="applications-off">
+<div class="applications-list">
+@foreach ($applications as $application)
+<div class="applications-card">
+        <a href=""><img src="{{ asset($application->image_url) }}" alt=""></a>
+        <h5 class="applications-tittle">{{$application->name}}</h5>
+        <p class="applications-description">{{$application->description}}</p>
+        <button class="btn-buy"> <a href="/applications/{{ $application->id}}">Comprar!</a></button>
     </div>
-    <div class="col-md-8 col-xl-6">
-      <div class="card-body">
-        <h5 class="card-title"><strong>Categorias:</strong> {{$categories->name}}</h5>
-        <hr>
-        <button type="submit" class="btn btn-primary">Comprar</button>
-        <hr>
-      </div>
-    </div>
-  </div>
-  <hr>
+@endforeach
 </div>
-<div class='link-back'>
-<a href="/applications">volver</a>
-</div>
+{{ $applications->links() }}
+
+</section>
 </div>
 
 

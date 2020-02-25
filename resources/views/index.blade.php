@@ -74,13 +74,15 @@
     </section>
 @else
 
-@foreach ($categories as $category)
-<div class="applications-card">
-        <h5 class="applications-tittle">{{$category->name}}</h5>
-    </div>
-@endforeach
-
-
+<section class="stock">
+    <h2> Nuestras Apps </h2>
+        @foreach ($categories as $category)
+                <article class="stock-productos">
+                    <h3> <strong>{{ $category->name }} </strong></h3>
+                    <a href="/categories/{{$category->id}}"><img src="{{ asset($category->image) }}" alt=""></a>
+                </article>
+        @endforeach
+    </section>
 
 @endguest
             <section class="about-us" id="about-us">

@@ -5,6 +5,8 @@
 
                 @if(Auth::user()->user_type == '1')
                 @include('user.dev-header')
+                @else
+                @include('user.client-header')
                 @endif
 
                 <div class="card-body">

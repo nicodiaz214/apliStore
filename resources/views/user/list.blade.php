@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('title')
-Apps de {{Auth::user()->name}} 
+Compras de {{Auth::user()->name}} 
 @endsection
 
 @section('content')

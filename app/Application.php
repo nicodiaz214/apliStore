@@ -27,4 +27,8 @@ public function User() {
     return $this->belongsTo('App\User');
 }
 
+public function Order() {
+    return $this->belongsTo('App\Order');
+}
+
 }

@@ -60,7 +60,8 @@
                         data-dismiss="alert" aria-label="close">&times;</a></p>
                 @endif
                 @endforeach
-
+                </div>
+  
                 @yield('login')
                 @yield('register')
                 @yield('applications')

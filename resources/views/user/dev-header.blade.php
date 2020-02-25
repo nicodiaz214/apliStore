@@ -9,5 +9,6 @@
                     <a class="dropdown-item" href="/developer/applications/add">Subir app</a>
                 </div>
             </li>
+            <li class="nav-link"><a href="/userprofile/orders">Mis compras</a></li>
         </ul>
     </nav>

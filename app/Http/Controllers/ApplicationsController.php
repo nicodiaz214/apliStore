@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Application;
 use App\Category;
 use App\User;
+use App\Order;
 use Auth;
 
 class ApplicationsController extends Controller
@@ -84,7 +85,9 @@ class ApplicationsController extends Controller
             'category_id' => $request->category_id,
             ]);
 
-        return redirect('/developer/applications/add');
+        \Session::flash('alert-success', 'Producto creado correctamente!');
+
+        return redirect()->back();
     }
 
     /**
@@ -152,7 +155,11 @@ class ApplicationsController extends Controller
 
         $application->update($request->all());
 
-        return redirect('/developer/applications/list');
+        \Session::flash('alert-success', 'Producto editado correctamente!');
+
+        return redirect()->back();
+
+        
     }
 
     /**

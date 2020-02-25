@@ -19,10 +19,15 @@ Route::get('welcome', function () {
 Route::get('/', 'IndexController@index');
 //Route::get('/', 'IndexController@create');
 Route::post('/', 'IndexController@store');
-Route::get('/userprofile', 'UsersController@index');	// Ruta al perfil del usuario
+Route::get('/userprofile', 'UsersController@index');
 Route::get('/applications', 'ApplicationsController@index');
 Route::get('/applications/{id}', 'ApplicationsController@show');
 Route::get('/applications', 'ApplicationsController@search');
+Route::get('/categories', 'CategoriesController@index');
+Route::get('/categories/{id}', 'CategoriesController@show');
+Route::get('/userprofile/orders','OrdersController@index');
+Route::post('/userprofile/orders','OrdersController@store');
+Route::get('/userprofile/orders/list','OrdersController@list');
 
 //desarrollador
 Route::group(['prefix' => 'developer', 'middleware'=>'developer'], function (){

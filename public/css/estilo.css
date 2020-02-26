@@ -173,6 +173,7 @@ border: 1px solid transparent;
     flex-wrap: wrap; 
     margin: 0 auto;
     height: 100vh;
+    padding: 4%;
   }
   
   .stock h2 {
@@ -374,6 +375,7 @@ border: 1px solid transparent;
     margin: 0 auto;
     height: 100vh;
     background-color: mediumslateblue;
+    padding: 2%;
 }
 
 .create-applications h1{
@@ -537,6 +539,23 @@ footer p{
 
 .contact p {
     font-family: 'Roboto Mono', monospace;
+}
+
+/*COMPRAS*/
+
+.form-comment{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+}
+.form-comment input{
+    flex-direction: row;
+    margin: 2% 0;
+}
+
+.form-comment button{
+    flex-direction: row;
+    margin: 2% 0;
 }
 
 /*media query celulares muy chicos*/

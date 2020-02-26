@@ -18,7 +18,11 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        return view('orders.list');      
+        $orders = Order::all();
+        return view('orders.list', [
+            'orders' => $orders,
+        ]);
+    
     }
 
     /**
@@ -35,10 +39,7 @@ class OrdersController extends Controller
 
     public function list()
     {
-        $orders = auth()->user()->application()->get();
-        return view('orders.list', [
-            'orders' => $orders,
-        ]);
+        return view('orders.list');
     }
 
     /**

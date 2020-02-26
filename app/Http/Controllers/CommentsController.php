@@ -9,7 +9,7 @@ use App\User;
 use App\Order;
 use Auth;
 
-class CategoriesController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        $applications = Application::paginate(3);
-        return view('categories.index', ['categories' => $categories,'applications' => $applications]);    
+        
     }
 
     /**
@@ -41,7 +39,22 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       dd($request);
+        $this->validate($request,[
+            'order_id' => 'required',
+            'coment' => 'required',
+            'rating' => 'required',
+        ]);
+
+        $coment = Coment::create([
+            'order_id' => auth()->user()->id,
+            'coment' => $request->coment,
+            'rating' => $request->rating,
+            ]);
+
+            \Session::flash('alert-success', 'Compra calificada!');
+
+            return redirect()->back();
     }
 
     /**
@@ -52,10 +65,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $category = Category::findOrFail($id);
-        $applications = $category->applications()->paginate(3);
-        $categories = Category::all();
-        return view('categories.show', ['categories' => $categories, 'category' => $category, 'applications' => $applications]);
+        //
     }
 
     /**

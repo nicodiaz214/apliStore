@@ -87,7 +87,7 @@ class ApplicationsController extends Controller
 
         \Session::flash('alert-success', 'Producto creado correctamente!');
 
-        return redirect()->back();
+        return redirect('/developer/applications/list');
     }
 
     /**
@@ -111,6 +111,8 @@ class ApplicationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+   
     public function edit($id)
     {
         $application = Application::find($id);
@@ -123,7 +125,7 @@ class ApplicationsController extends Controller
             }
         }
         
-        return view('applications.edit',[
+        return view('/developer/applications/list',[
             'application' => $application,
         ]);
     }
@@ -157,8 +159,7 @@ class ApplicationsController extends Controller
 
         \Session::flash('alert-success', 'Producto editado correctamente!');
 
-        return redirect()->back();
-
+        return redirect('/developer/applications/list');
         
     }
 
@@ -176,7 +177,7 @@ class ApplicationsController extends Controller
 
         \Session::flash('alert-success', 'Producto eliminado correctamente !!!');
 
-        return redirect()->back();
+        return redirect('/developer/applications/list');
     }
 
 }

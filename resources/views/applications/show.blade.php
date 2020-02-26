@@ -4,6 +4,10 @@
 @endsection
 @section('content')
 
+@if(Auth::user() == NULL)
+@include('auth.login')
+@else
+
 <div class='title-app'>
 <h2> {{$application->name}}</h2>
 </div>
@@ -41,6 +45,6 @@
 <a href="/applications"><button class="btn btn-primary">Volver</button></a>
 </div>
 </div>
-
+@endif
 
 @endsection

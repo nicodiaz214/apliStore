@@ -27,17 +27,17 @@ Route::get('/categories', 'CategoriesController@index');
 Route::get('/categories/{id}', 'CategoriesController@show');
 Route::get('/userprofile/orders','OrdersController@index');
 Route::post('/userprofile/orders','OrdersController@store');
-Route::get('/userprofile/orders/list','OrdersController@list');
+Route::get('/userprofile/orders','OrdersController@list');
+Route::post('/userprofile/list','CommentsController@store');
 
 //desarrollador
 Route::group(['prefix' => 'developer', 'middleware'=>'developer'], function (){
-Route::get('/applications/list','ApplicationsController@list');
 Route::get('/applications/add', 'ApplicationsController@create');
 Route::post('/applications/add', 'ApplicationsController@store');
+Route::get('/applications/list','ApplicationsController@list');
 Route::get('/applications/{id}/edit', 'ApplicationsController@edit');
 Route::patch('/applications/{id}', 'ApplicationsController@update');
 Route::delete('/applications/{id}', 'ApplicationsController@destroy');
-
 });
 
 

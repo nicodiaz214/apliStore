@@ -14,11 +14,11 @@ Compras de {{Auth::user()->name}}
                 <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Nº ID</th>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Precio</th>
-                        <th></th>
+                        <th>Nº de Compra</th>
+                        <th>Nombre Aplicación</th>
+                        <th>Comentario</th>
+                        <th>Rating</th>
+                        <th>Calificación</th>
                     </tr>
                 </thead>
 
@@ -31,10 +31,19 @@ Compras de {{Auth::user()->name}}
                             <td></td>
                             <td></td>
                             <td>
-                            <div class="edit-delete">
-                                <form action="" method="get">
-                                    <button class="btn btn-sm btn-success" title="Ver"><i class="far fa-eye"></i></button>
-                                </form>
+                            <div class="form-comment">
+                            <form action="/userprofile" method="post">
+                            <input class="form-control" type="hidden" name="content" id="" placeholder="Comentario">   
+                            <input class="form-control" type="text" name="order_id" id="" placeholder="Comentario">
+                            <select name="category_id" id="category_id" name="rating" class="form-control" required>
+                            <option value="Mala">Mala</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Buena">Buena</option>
+                            <option value="Muy Buena">Muy buena</option>
+                            <option value="Excelente">Excelente</option>
+                            </select>
+                            <button class= "btn btn-primary" type="submit">Califica</button>               
+                            </form>
                             </div>
                             </td>
                         </tr>

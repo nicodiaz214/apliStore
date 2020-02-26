@@ -8,7 +8,7 @@ Listado de Apps
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+    <li class="breadcrumb-item"><a href="/categories">Categorias</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{$category->name}}</li>
   </ol>
 </nav>

@@ -1,10 +1,17 @@
 @extends('plantilla')
 
 @section('title')
-Compras de {{Auth::user()->name}} 
+Perfil de {{Auth::user()->name}} 
 @endsection
 
 @section('content')
+
+<script>
+function myFunction() {
+  confirm("Seguro quiere borrar tu app?");
+}
+</script>
+
 
 <div class="app-list">
         <div class="col-12">
@@ -31,7 +38,7 @@ Compras de {{Auth::user()->name}}
                             <td>{{$application->price}}</td>
                             <td>
                             <div class="edit-delete">
-                                <form action={{url('/applications/'.$application->id)}} method="get">
+                                <form action="{{url('/applications/'.$application->id)}}" method="get">
                                     <button class="btn btn-sm btn-success" title="Ver"><i class="far fa-eye"></i></button>
                                 </form>
                                 <form action="{{url('/developer/applications/'.$application->id.'/edit')}}" method="get">
@@ -42,7 +49,7 @@ Compras de {{Auth::user()->name}}
                                 <form action="{{url('/developer/applications/'.$application->id)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-sm btn-danger" name="" value="" title="Eliminar"><i class="fas fa-trash-alt"></i>
+                                    <button class="btn btn-sm btn-danger" name="" value="" onclick="myFunction()" title="Eliminar"><i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>
                             </div>

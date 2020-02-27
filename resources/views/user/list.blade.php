@@ -25,7 +25,7 @@ function myFunction() {
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th>Precio</th>
-                        <th></th>
+                        <th>Editar / Borrar</th>
                     </tr>
                 </thead>
 
@@ -33,14 +33,11 @@ function myFunction() {
                     @foreach ($applications as $application)
                         <tr>
                             <td>{{$application->id}}</td>
-                            <td>{{$application->name}}</td>
+                            <td><a href="{{url('/applications/'.$application->id)}}" target="_blank" rel="noopener noreferrer" title="{{$application->name}}">{{$application->name}}</a></td>
                             <td>{{$application->description}}</td>
-                            <td>{{$application->price}}</td>
+                            <td>$ {{$application->price}}</td>
                             <td>
-                            <div class="edit-delete">
-                                <form action="{{url('/applications/'.$application->id)}}" method="get">
-                                    <button class="btn btn-sm btn-success" title="Ver"><i class="far fa-eye"></i></button>
-                                </form>
+                            <div class="edit-delete">                      
                                 <form action="{{url('/developer/applications/'.$application->id.'/edit')}}" method="get">
                                     <button class="btn btn-sm btn-secondary" name="" value=""
                                         title="Editar"><i class="far fa-edit"></i>

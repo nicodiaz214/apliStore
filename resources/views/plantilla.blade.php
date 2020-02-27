@@ -11,14 +11,22 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,500,700&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap" rel="stylesheet">
+            <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+            <link rel="manifest" href="img/favicon/site.webmanifest">
+            <link rel="shortcut icon" href="img/favicon/favicon.ico">
+            <meta name="msapplication-TileColor" content="#da532c">
+            <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+            <meta name="theme-color" content="#ffffff">
             <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
         </head>
         <body>
             <div class="container-fluid">
 
                 <header id="home">
-                    <nav class="navbar navbar-expand-lg navbar-light" id="barra-inicio">
-                        <a class="navbar-brand" href="/"><img src="img/logo.png" alt="">ApliSports</a>
+                    <nav class="navbar navbar-expand-lg navbar-light " id="barra-inicio">
+                        <a class="navbar-brand" title="ApliSport - Tienda de Apps Deportivas" href="/"><img src=""> ApliSports </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -35,12 +43,15 @@
                             <li class="nav-item" id="nav-links">
                                 <a class="nav-link" href="/login">Login</a>
                               </li>
+                              <li class="nav-item" id="nav-links">
+                                <a class="nav-link" href="/register">Register</a>
+                              </li>
                             @else
-                            <li class="nav-item" id="nav-links">
+                              <li class="nav-item" id="nav-links">
                                 <a class="nav-link" href="/userprofile">{{ Auth::user()->name }}</a>
                               </li>
                                 <li class="nav-item" >
-                                    <a class="nav-link" id="nav-links" href="{{ route('logout') }}"
+                                    <a class="nav-link" title="Logout" id="nav-links" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     <i class="fas fa-times"></i>

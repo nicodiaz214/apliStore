@@ -53,5 +53,5 @@
 </form>
 
 <div class="btn-back">
-<a href="/developer/applications/list"><button class="btn btn-primary">volver</button></a>
+<a href="/userprofile"><button class="btn btn-primary">volver</button></a>
 </div>

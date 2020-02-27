@@ -119,13 +119,14 @@ class ApplicationsController extends Controller
 
         $user_app = auth()->user()->applications()->get();
 
-        foreach ($user_app as $app) {
-            if ($app->id != $id) {
-                return abort(403, 'No tienes permiso para acceder');
-            }
-        }
+        //verifica que la APP corresponda con una que tiene el Desarrollador.
+        // Documentacion laravel. https://laravel.com/docs/5.4/collections#method-contains
         
-        return view('/developer/applications/list',[
+        if (!$user_app->contains($id)) {
+            return abort(403, 'No tienes permiso para acceder');
+        }
+
+        return view('applications.edit',[
             'application' => $application,
         ]);
     }

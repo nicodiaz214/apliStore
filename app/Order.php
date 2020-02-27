@@ -17,4 +17,9 @@ class Order extends Model
     public function application() {
         return $this->belongsToMany('App\Application');  
     }
+
+    public function comment() {
+        return $this->hasOne('App\Comment');  
+    }
+
 }

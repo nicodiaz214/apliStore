@@ -7,6 +7,7 @@ use App\Application;
 use App\Category;
 use App\User;
 use App\Order;
+use App\Comment;
 use Auth;
 
 class CommentsController extends Controller
@@ -39,16 +40,16 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-       dd($request);
+      
         $this->validate($request,[
             'order_id' => 'required',
-            'coment' => 'required',
+            'content' => 'required',
             'rating' => 'required',
         ]);
 
-        $coment = Coment::create([
-            'order_id' => auth()->user()->id,
-            'coment' => $request->coment,
+        $comment = Comment::create([
+            'order_id' => $request->order_id,
+            'content' => $request->content,
             'rating' => $request->rating,
             ]);
 

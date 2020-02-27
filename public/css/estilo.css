@@ -94,6 +94,9 @@ html{
 .subscription{
     height: 100vh;
     background: url(../img/fondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
 }
@@ -192,13 +195,7 @@ border: 1px solid transparent;
   
   .stock .stock-productos a img {
     width: 50%;
-    filter: grayscale(90%);
   }
-  
-  .stock .stock-productos a img:hover {
-    filter: grayscale(0%);
-  }
-  
 
 /* APPLICATIONS */
 
@@ -212,6 +209,7 @@ border: 1px solid transparent;
     width: 100%;
     text-align: center;
     margin-top: 2%;
+    text-transform: uppercase;
 }
 
 #card-applications{
@@ -404,6 +402,7 @@ border: 1px solid transparent;
     display: flex;
     margin-left: 2%;
     flex-direction: row;
+    justify-content: center;
 }
 
 .edit-delete form button{
@@ -542,6 +541,10 @@ footer p{
 }
 
 /*COMPRAS*/
+
+.nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
 
 .form-comment{
     width: 50%;

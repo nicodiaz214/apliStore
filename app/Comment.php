@@ -22,6 +22,14 @@ class Comment extends Model
         return $this->belongsToMany('App\Application');  
     }
 
+    public function getContent() {
+        return $this->content;  
+    }
+
+    public function getRating() {
+        return $this->rating;  
+    }
+
 }
 
 

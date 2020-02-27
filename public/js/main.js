@@ -18,12 +18,20 @@ document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 };
 
-
 //ScrollReveal de JavaScript
-//window.sr = ScrollReveal();
-//        sr.reveal('.contact', {
-//          duration: 2000,
-//          origin:'bottom',
-//          distance: '1000px',
-//          delay: 1000
-//       });
+window.sr = ScrollReveal();
+        sr.reveal('.stock', {
+        duration: 1000,
+        origin:'bottom',
+        delay: 1000
+        });
+        sr.reveal('.about-us-info', {
+        duration: 1000,
+        origin:'bottom',
+        delay: 1000
+        });
+        sr.reveal('.contact', {
+        duration: 1000,
+        origin:'bottom',
+        delay: 1000
+        });

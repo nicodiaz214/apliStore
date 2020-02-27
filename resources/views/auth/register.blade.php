@@ -47,13 +47,12 @@ Registrate
                     <div class="col-md-6" >
                     <select name="user_type" id="user_type" class="form-control" required>
                         <option <?= old('user_type') == 'Soy desarrollador' ? 'selected':null ?>
-                            value="1">Soy desarrollador</option>
+                            value="1">Desarrollador</option>
                         <option <?= old('user_type') == 'No soy desarrollador' ? 'selected':null ?>
-                            value="2">No soy desarrollador</option>
+                            value="2">Cliente</option>
                     </select>
                       </div>
                        </div>
-
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña:') }}</label>
 

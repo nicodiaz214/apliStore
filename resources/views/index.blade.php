@@ -11,14 +11,15 @@
             <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,500,700&display=swap" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap" rel="stylesheet">
+            <link rel="shortcut icon" href="{{ asset('img/favicon/favicon.ico')}}">
             <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
         </head>
         <body>
             <div class="container-fluid">
 
                 <header id="home">
-                    <nav class="navbar navbar-expand-lg navbar-light" id="barra-inicio">
-                        <a class="navbar-brand" href="/"><img src="img/logo.png" alt="">ApliSports</a>
+                    <nav class="navbar navbar-expand-lg navbar-light " id="barra-inicio">
+                        <a class="navbar-brand" title="ApliSport - Tienda de Apps Deportivas" href="/"><img src=""> ApliSports </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -41,6 +42,9 @@
                             <li class="nav-item" id="nav-links">
                                 <a class="nav-link" href="/login">Login</a>
                               </li>
+                              <li class="nav-item" id="nav-links">
+                                <a class="nav-link" href="/register">Register</a>
+                              </li>
                             @else
                               <li class="nav-item" id="nav-links">
                                 <a class="nav-link" href="/userprofile">{{ Auth::user()->name }}</a>
@@ -59,32 +63,29 @@
                           </ul>
                       </nav>
                 </header>
-
                 @guest
                 <section class="subscription">
-        <div class="jumbotron">
-            <h1 class="display-4">Conoces ApliSports?</h1>
-            <p class="lead">Descubrí las aplicaciones deportivas que marcan tendencia!</p>
-            <hr class="my-8">
-            <p>Si sos desarrollador podes vender tus apps en nuestro sitio.</p>
-            <p class="lead">
-              <a class="btn btn-primary btn-lg" id="btn-subscription" href="/register" role="button">Registrate!</a>
-            </p>
-          </div>
-    </section>
-@else
+                    <div class="jumbotron">
+                      <h1 class="display-4">Conoces ApliSports?</h1>
+                      <p class="lead">Descubrí las aplicaciones deportivas que marcan tendencia!</p>
+                      <hr class="my-8">
+                      <p>Si sos desarrollador, ademas de comprar apps, también podes vender las tuyas en nuestro sitio.</p>
+                      <p class="lead">
+                      <a class="btn btn-primary btn-lg" id="btn-subscription" href="/register" role="button">Registrate!</a>
+                      </p>
+                      </div>
+                </section>         
+                @endguest
+                <section class="stock">
+                    <h2> Nuestras Apps </h2>
+                        @foreach ($categories as $category)
+                                <article class="stock-productos">
+                                <h3> <strong>{{ $category->name }} </strong></h3>
+                                <a href="/categories/{{$category->id}}"><img src="{{ asset($category->image) }}" alt=""></a>
+                                </article>
+                        @endforeach
+                </section>
 
-<section class="stock">
-    <h2> Nuestras Apps </h2>
-        @foreach ($categories as $category)
-                <article class="stock-productos">
-                    <h3> <strong>{{ $category->name }} </strong></h3>
-                    <a href="/categories/{{$category->id}}"><img src="{{ asset($category->image) }}" alt=""></a>
-                </article>
-        @endforeach
-    </section>
-
-@endguest
             <section class="about-us" id="about-us">
                 <div class="about-us-info">
                     <span>ApliSports</span>
@@ -137,7 +138,7 @@
                 </footer>
 
                 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
-                <script src="js/main.js"></script>
+                <script src="{{ asset('js/main.js') }}"></script> 
 
             </div>
 

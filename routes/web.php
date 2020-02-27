@@ -30,6 +30,7 @@ Route::post('/userprofile/orders','OrdersController@store');
 Route::get('/userprofile/orders','OrdersController@list');
 Route::post('/userprofile/list','CommentsController@store');
 
+
 //desarrollador
 Route::group(['prefix' => 'developer', 'middleware'=>'developer'], function (){
 Route::get('/applications/add', 'ApplicationsController@create');

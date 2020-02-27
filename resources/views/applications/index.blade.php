@@ -2,17 +2,17 @@
 @section('title')
 Listado de Apps
 @endsection
-@section('applications')
+@section('content')
 <nav class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand"></a>
   <form class="form-inline" action="/applications" role="search" method="get">
   <input class="form-control mr-sm-2" type="text" name="name" placeholder="Busca tu aplicacion" aria-label="Search">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+  <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
   </form>
 </nav>
 
 <div class="applications-category">
-<h2> Listado de Apps </h2>
+<h2> Nuestras Apps </h2>
 <section class="applications-off">
 <div class="applications-list">
 @foreach ($applications as $application)

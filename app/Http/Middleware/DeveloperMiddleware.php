@@ -24,6 +24,6 @@ class DeveloperMiddleware
             return redirect('/');
         }
         
-        abort(403, "Forbidden - You don't have permission to access / on this server");
+        abort(403, "Lo sentimos, pero no puedes acceder a esta página");
     }
 }

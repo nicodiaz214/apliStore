@@ -39,7 +39,15 @@ class OrdersController extends Controller
 
     public function list()
     {
-        return view('orders.list');
+        //dd(Order::find(1)->comment()->first()->getContent());
+
+        $applications = auth()->user()->applications()->get();
+        $orders = auth()->user()->orders()->get();
+
+        return view('orders.list', [
+            'applications' => $applications,
+            'orders' => $orders,
+        ]);
     }
 
     /**
@@ -52,20 +60,19 @@ class OrdersController extends Controller
     {
 
         $this->validate($request,[
-            'user_id' => 'required',
             'application_id' => 'required',
-            'price' => 'required',
+            'application_price' => 'required',
         ]);
 
         $order = Order::create([
             'user_id' => auth()->user()->id,
             'application_id' => $request->application_id,
-            'price' => $request->price,
+            'price' => $request->application_price,
             ]);
 
             \Session::flash('alert-success', 'Gracias por la compra!');
 
-            return view('orders.list');
+            return redirect('/userprofile/orders');
     }
 
     /**

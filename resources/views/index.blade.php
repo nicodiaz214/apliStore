@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>@yield('title')</title>
+            <title>@yield('title', 'ApliSports')</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
             <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
@@ -124,16 +124,16 @@
                         </div>
                     </form>
                     <div class="contact-bottom">
-                    <a href="#" id="correo">contacto@aplistore.com</a>
-                    <a href="#" id="phone">+ 54 11 4567 1234</a>
+                    <a href="mailto:contacto@apliSports.com?Subject=Consulta" id="correo">contacto@aplisports.com</a>
+                    <a href="https://api.whatsapp.com/send?phone=5491137929212" id="phone">+ 54 11 4567 1234</a>
                     </div>
                     <div class="social-media-btn">
-                            <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                            <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                            <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>                   
+                            <a href="http://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                            <a href="http://www.twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                            <a href="http://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>                   
                         </div>
                         <p>O'higgins 2191, 2do E. CABA</p>
-                        <p>©ApliStore 2020. Todos los derechos reservados.</p>
+                        <p>©ApliSports 2020. Todos los derechos reservados.</p>
                     </div>
                 </footer>
 

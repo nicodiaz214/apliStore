@@ -85,11 +85,11 @@
                </section>
 
               <footer>
-              <p>©ApliStore 2020. Todos los derechos reservados.</p>
+              <p>©ApliSports 2020. Todos los derechos reservados.</p>
               </footer>
 
                 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
-                <script src="js/main.js"></script>
+                <script src="{{ asset('js/main.js') }}"></script> 
 
             </div>
 

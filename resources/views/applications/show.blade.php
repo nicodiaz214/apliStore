@@ -31,7 +31,7 @@
             <form action="/userprofile/orders" method="post">
             @csrf
               <input type="hidden" type="text" name="application_price" id="" value="{{$application->price}}">
-              <button type="submit" class="btn btn-primary" name="application_id" value="{{$application->id}}">Comprar</button>
+              <button type="submit" class="btn btn-primary" name="application_id" value="{{$application->id}}" onclick="return confirm('Seguro quieres comprar la app?');">Comprar</button>
             </form>
           @else
             <button class="btn btn-secondary" disabled><i class="fas fa-ban"></i> Ya tenes esta app!</button>

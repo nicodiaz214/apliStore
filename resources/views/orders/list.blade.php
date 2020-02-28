@@ -44,7 +44,7 @@ Compras de {{Auth::user()->name}}
                                         <form action="/userprofile/list" method="post">
                                         @csrf
                                         @method('post')
-                                            <input class="form-control" type="text" name="content" placeholder="Comentario">
+                                            <input class="form-control" type="text" name="content" placeholder="Comentario" required>
                                             <select class="form-control" name="rating">
                                                 <option value="1">Mala</option>
                                                 <option value="2">Regular</option>
@@ -52,7 +52,7 @@ Compras de {{Auth::user()->name}}
                                                 <option value="4">Muy buena</option>
                                                 <option value="5">Excelente</option>
                                             </select>
-                                        <button class= "btn btn-primary" type="submit" name="order_id" value="{{$order->id}}">Califica</button>               
+                                        <button class= "btn btn-primary" type="submit" name="order_id" value="{{$order->id}}" required>Califica</button>               
                                         </form>
                                  @endif
                                 </div>

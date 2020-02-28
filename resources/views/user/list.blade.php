@@ -6,13 +6,6 @@ Perfil de {{Auth::user()->name}}
 
 @section('content')
 
-<script>
-function myFunction() {
-  confirm("Seguro quiere borrar tu app?");
-}
-</script>
-
-
 <div class="app-list">
         <div class="col-12">
             <div class="card">
@@ -46,7 +39,7 @@ function myFunction() {
                                 <form action="{{url('/developer/applications/'.$application->id)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button class="btn btn-sm btn-danger" name="" value="" onclick="myFunction()" title="Eliminar"><i class="fas fa-trash-alt"></i>
+                                    <button class="btn btn-sm btn-danger" name="" value="" title="Eliminar" onclick="return confirm('Seguro quieres borras la app?');"><i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>
                             </div>
